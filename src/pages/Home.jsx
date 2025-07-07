@@ -43,12 +43,6 @@ function Home() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Link
-              to="/project"
-              className="px-6 py-3 bg-yellow-300 text-indigo-800 font-semibold rounded shadow hover:bg-yellow-400 transition"
-            >
-              View My Work
-            </Link>
-            <Link
               to="/contact"
               className="px-6 py-3 border-2 border-white text-white font-semibold rounded hover:bg-white hover:text-indigo-700 transition"
             >
