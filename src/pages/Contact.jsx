@@ -40,6 +40,17 @@ function Contact() {
                 linkedin.com/in/deepaksinghrautela
               </a>
             </li>
+            <li>
+              💼 GitHub:{" "}
+              <a
+                href="https://linkedin.com/in/deepaksinghrautela"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:underline"
+              >
+                https://github.com/DeepakSinghRautela
+              </a>
+            </li>
           </ul>
         </div>
 

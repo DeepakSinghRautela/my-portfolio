@@ -1,4 +1,4 @@
-// About.jsx
+import Education from '../pages/Education.jsx';
 function About() {
   return (
     <section className="bg-[#0f172a] text-white min-h-screen px-6 py-12 mt-16 md:px-12 ">
@@ -61,6 +61,7 @@ function About() {
           </ul>
         </div>
       </div>
+      <Education />
     </section>
   );
 }
