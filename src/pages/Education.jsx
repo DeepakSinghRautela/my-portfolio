@@ -1,7 +1,7 @@
 // Education.jsx
 function Education() {
   return (
-    <section id="education" className="bg-[#0f172a] text-white min-h-screen px-6 py-20 md:px-12 pt-24 scroll-mt-24">
+    <section id="education" className="bg-[#0f172a] text-white  px-6 py-20 md:px-12 pt-24 scroll-mt-24">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold mb-10 text-yellow-300 text-center">Education</h2>
 

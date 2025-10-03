@@ -1,7 +1,7 @@
 // Contact.jsx
 function Contact() {
   return (
-    <section className="bg-[#0f172a] text-white min-h-screen px-4 py-12 mt-16 sm:px-6 md:px-12">
+    <section className="bg-[#0f172a] text-white   px-4 py-12 mt-16 sm:px-6 md:px-12">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-yellow-300">Contact Me</h2>
         <p className="text-base sm:text-lg mb-8">

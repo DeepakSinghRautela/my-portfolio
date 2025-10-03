@@ -1,20 +1,17 @@
-// Navbar.jsx
-import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { Link } from "react-scroll";
 
 function Navbar() {
-  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    {name: "Education", path: "/education"},
-    { name: "Skills", path: "/skills" },
-    {name: "Experience", path: "/experience"},
-    { name: "Projects", path: "/project" },
-    { name: "Contact", path: "/contact" },
-    
+    { name: "Home", path: "home" },
+    { name: "About", path: "about" },
+    { name: "Education", path: "education" },
+    { name: "Skills", path: "skills" },
+    { name: "Experience", path: "experience" },
+    { name: "Projects", path: "project" },
+    { name: "Contact", path: "contact" },
   ];
 
   return (
@@ -30,11 +27,12 @@ function Navbar() {
             <li key={link.path}>
               <Link
                 to={link.path}
-                className={`px-3 py-2 rounded-md transition duration-200 font-medium ${
-                  location.pathname === link.path
-                    ? "bg-white text-indigo-600 shadow-md"
-                    : "hover:bg-white hover:text-indigo-600"
-                }`}
+                smooth={true}
+                duration={600}
+                offset={-70} // adjust for fixed navbar height
+                spy={true}
+                activeClass="bg-white text-indigo-600 shadow-md"
+                className="px-3 py-2 rounded-md transition duration-200 font-medium cursor-pointer hover:bg-white hover:text-indigo-600"
               >
                 {link.name}
               </Link>
@@ -83,12 +81,13 @@ function Navbar() {
               <li key={link.path}>
                 <Link
                   to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 rounded-md transition duration-200 font-medium ${
-                    location.pathname === link.path
-                      ? "bg-white text-indigo-600 shadow-md"
-                      : "hover:bg-white hover:text-indigo-600"
-                  }`}
+                  smooth={true}
+                  duration={600}
+                  offset={-70}
+                  spy={true}
+                  onClick={() => setIsOpen(false)} // close menu on click
+                  activeClass="bg-white text-indigo-600 shadow-md"
+                  className="block px-3 py-2 rounded-md transition duration-200 font-medium cursor-pointer hover:bg-white hover:text-indigo-600"
                 >
                   {link.name}
                 </Link>

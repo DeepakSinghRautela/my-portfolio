@@ -1,7 +1,7 @@
 // Experience.jsx
 function Experience() {
   return (
-    <section className="bg-[#0f172a] text-white min-h-screen px-4 py-12 mt-16 sm:px-6 md:px-12">
+    <section className="bg-[#0f172a] text-white   px-4 py-12 mt-16 sm:px-6 md:px-12">
       <div className="max-w-4xl mx-auto pt-12">
         <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-yellow-300 text-center">Work Experience</h2>
 
