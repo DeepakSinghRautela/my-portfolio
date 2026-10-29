@@ -1,72 +1,84 @@
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-scroll";
 
 function Footer() {
   const navLinks = [
     { name: "Home", path: "home" },
     { name: "About", path: "about" },
+    { name: "Education", path: "education" },
     { name: "Skills", path: "skills" },
-    { name: "Projects", path: "project" },
+    { name: "Experience", path: "experience" },
+    { name: "Projects", path: "projects" },
     { name: "Contact", path: "contact" },
   ];
 
   return (
     <footer className="bg-gradient-to-r from-indigo-700 to-purple-700 text-white mt-20">
       <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Logo / Name */}
+          <Link
+            to="home"
+            smooth={true}
+            duration={600}
+            className="cursor-pointer text-xl font-bold hover:text-yellow-300 transition"
+          >
+            Deepak Singh Rautela
+          </Link>
 
-          {/* Left - Logo / Name */}
-          <h2 className="text-xl font-bold">Deepak Singh Rautela</h2>
+          {/* Navigation Links */}
+          <nav aria-label="Footer navigation">
+            <ul className="flex flex-wrap justify-center gap-x-5 gap-y-3 text-sm md:text-base">
+              {navLinks.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    smooth={true}
+                    duration={600}
+                    offset={-70}
+                    className="cursor-pointer hover:text-yellow-300 transition-colors duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-          {/* Middle - Navigation Links */}
-          <ul className="flex flex-col md:flex-row gap-4 md:gap-8 text-center">
-            {navLinks.map((link) => (
-              <li key={link.path}>
-                <Link
-                  to={link.path}
-                  smooth={true}
-                  duration={600}
-                  offset={-70}
-                  className="cursor-pointer hover:text-yellow-300 transition"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Right - Social Icons */}
+          {/* Social Links */}
           <div className="flex gap-5 text-2xl">
             <a
               href="https://github.com/DeepakSinghRautela"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-yellow-300 transition"
+              aria-label="GitHub profile"
+              title="GitHub"
+              className="hover:text-yellow-300 transition-colors duration-200"
             >
               <FaGithub />
             </a>
+
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/deepaksinghrautela"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-yellow-300 transition"
+              aria-label="LinkedIn profile"
+              title="LinkedIn"
+              className="hover:text-yellow-300 transition-colors duration-200"
             >
               <FaLinkedin />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-yellow-300 transition"
-            >
-              <FaTwitter />
             </a>
           </div>
         </div>
 
-        {/* Bottom Text */}
-        <div className="text-center mt-6 text-sm text-gray-300">
-          © {new Date().getFullYear()} Deepak Singh Rautela. All rights reserved.
+        <div className="border-t border-white/20 mt-8 pt-6 text-center text-sm text-gray-200">
+          <p>
+            © {new Date().getFullYear()} Deepak Singh Rautela. All rights reserved.
+          </p>
+          <p className="mt-2 text-gray-300">
+            Designed and developed with React.js and Tailwind CSS.
+          </p>
         </div>
       </div>
     </footer>

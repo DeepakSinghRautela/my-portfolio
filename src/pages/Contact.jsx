@@ -1,60 +1,102 @@
-// Contact.jsx
+
 function Contact() {
+  const contacts = [
+    {
+      icon: "📧",
+      label: "Email",
+      value: "deepaksinghrautela15@gmail.com",
+      href: "mailto:deepaksinghrautela15@gmail.com",
+    },
+    {
+      icon: "📞",
+      label: "Phone",
+      value: "+91 74668 42956",
+      href: "tel:+917466842956",
+    },
+    {
+      icon: "💼",
+      label: "LinkedIn",
+      value: "linkedin.com/in/deepaksinghrautela",
+      href: "https://linkedin.com/in/deepaksinghrautela",
+    },
+    {
+      icon: "💻",
+      label: "GitHub",
+      value: "github.com/DeepakSinghRautela",
+      href: "https://github.com/DeepakSinghRautela",
+    },
+  ];
+
   return (
-    <section className="bg-[#0f172a] text-white   px-4 py-12 mt-16 sm:px-6 md:px-12">
+    <section
+      id="contact"
+      className="bg-[#0f172a] text-white px-4 py-12 mt-16 sm:px-6 md:px-12"
+    >
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-yellow-300">Contact Me</h2>
-        <p className="text-base sm:text-lg mb-8">
-          Feel free to reach out for collaborations, freelance opportunities, or just to say hello!
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-yellow-300">
+          Contact Me
+        </h2>
+
+        <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed">
+          Have a project in mind or looking for a frontend developer?
+          Feel free to reach out for collaborations, opportunities,
+          or just to say hello!
         </p>
 
-        <div className="bg-slate-800 p-4 sm:p-6 rounded-lg shadow-lg text-left text-base sm:text-lg">
-          <ul className="space-y-4">
-            <li>
-              📧 Email:{" "}
-              <a
-                href="mailto:deepaksinghrautela15@gmail.com"
-                className="text-blue-400 hover:underline break-all"
+        <div className="bg-slate-800 p-5 sm:p-8 rounded-2xl shadow-xl border border-slate-700 text-left">
+          <h3 className="text-xl font-semibold text-yellow-300 mb-6">
+            Get in Touch
+          </h3>
+
+          <div className="space-y-5">
+            {contacts.map((contact) => (
+              <div
+                key={contact.label}
+                className="flex items-start gap-4"
               >
-                deepaksinghrautela15@gmail.com
-              </a>
-            </li>
-            <li>
-              📞 Phone:{" "}
-              <a
-                href="tel:+917466842956"
-                className="text-blue-400 hover:underline"
-              >
-                +91 74668 42956
-              </a>
-            </li>
-            <li>
-              💼 LinkedIn:{" "}
-              <a
-                href="https://linkedin.com/in/deepaksinghrautela"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:underline break-all"
-              >
-                linkedin.com/in/deepaksinghrautela
-              </a>
-            </li>
-            <li>
-              💼 GitHub:{" "}
-              <a
-                href="https://github.com/DeepakSinghRautela"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:underline break-all"
-              >
-                github.com/DeepakSinghRautela
-              </a>
-            </li>
-          </ul>
+                <div className="flex items-center justify-center w-11 h-11 shrink-0 rounded-lg bg-slate-700 text-xl">
+                  {contact.icon}
+                </div>
+
+                <div className="min-w-0">
+                  <p className="text-sm text-slate-400 mb-1">
+                    {contact.label}
+                  </p>
+
+                  <a
+                    href={contact.href}
+                    target={
+                      contact.label === "LinkedIn" ||
+                      contact.label === "GitHub"
+                        ? "_blank"
+                        : undefined
+                    }
+                    rel={
+                      contact.label === "LinkedIn" ||
+                      contact.label === "GitHub"
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="text-blue-400 hover:text-yellow-300 transition-colors duration-200 break-all"
+                  >
+                    {contact.value}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <p className="mt-10 text-xs sm:text-sm text-slate-400">
-          I'll do my best to get back to you within 24 hours. Looking forward to connecting!
+        <a
+          href="mailto:deepaksinghrautela15@gmail.com"
+          className="inline-block mt-8 px-7 py-3 bg-yellow-300 text-slate-900 font-semibold rounded-lg hover:bg-yellow-200 transition-colors duration-200"
+        >
+          Send Me an Email
+        </a>
+
+        <p className="mt-8 text-xs sm:text-sm text-slate-400">
+          Thank you for visiting my portfolio. I look forward to connecting
+          with you!
         </p>
       </div>
     </section>
