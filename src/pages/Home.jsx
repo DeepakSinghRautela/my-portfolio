@@ -87,7 +87,8 @@ function Home() {
 
               <a
                 href="/DSR_Resume.pdf"
-                download
+                download="Deepak_Resume.pdf"
+                type="application/pdf"
                 className="px-6 py-3 border-2 border-yellow-300 text-yellow-300 font-semibold rounded-lg hover:bg-yellow-300 hover:text-slate-900 transition-colors duration-300"
               >
                 Download Resume
